@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button href="/tabs"> Back </ion-button>
+    </ion-buttons>
+    <ion-title>Add Tenant</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="center">
+    <h1>Register Tenant</h1>
+  </div>
+
+  <br/>
+
+
+  <div class="form-container">
+    <ion-input
+      label="First Name"
+      label-placement="floating"
+      fill="outline"
+      placeholder="Enter text"
+      required
+    ></ion-input>
+
+    <ion-input
+      label="Last Name"
+      label-placement="floating"
+      fill="outline"
+      placeholder="Enter text"
+      required
+    ></ion-input>
+
+    <ion-input
+      label="Room #"
+      label-placement="floating"
+      fill="outline"
+      placeholder="Enter text"
+      required
+    ></ion-input>
+
+    <ion-img
+      class="image"
+      src="assets/useravatar.jpg" 
+      alt="Avatar"
+    ></ion-img>
+
+    <div class="bottomtext">
+      <!-- <input type="file" accept="image/*" (change)="handleFileInput($event)" />
+      <button (click)="uploadImage()">Upload</button> -->
+    </div>
+
+    <div class="bottomtext">
+      <ion-button shape="round" color="success">Add Image<ion-icon slot="end" name="add-circle-outline"></ion-icon></ion-button>
+    </div>
+    
+    <br/><br/>
+
+    <div class="bottomtext">
+      <ion-button shape="round" color="success">Submit<ion-icon slot="end" name="add-circle-outline"></ion-icon></ion-button>
+    </div>
+  </div>
+</ion-content>

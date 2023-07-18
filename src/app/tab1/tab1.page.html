@@ -1,0 +1,53 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <div class="center">
+    <h1>Welcome Ballelos!</h1>
+  </div>
+
+  <br/>
+
+  <div class="bottomtext">
+    <ion-button href="../../login" shape="round" color="success">Login</ion-button>
+    <ion-button href="../../registration" shape="round" color="success">Registration</ion-button>
+  </div>
+
+  <ion-card>
+    <ion-card-content>
+      <div class="status">
+        <ion-label>Alarm Status</ion-label>
+        <ion-toggle class="status-toggle" labelPlacement="start"></ion-toggle>
+      </div>
+      <div class="status">
+        <ion-label>Camera Status</ion-label>
+        <ion-toggle class="status-toggle" labelPlacement="start" (ionChange)="toggleCamera($event)" labelPlacement="start" checked="true"></ion-toggle>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  
+  <div class="center" *ngIf="cameraStatus">
+    <div class="expand-in">
+    <h1>Live Video Feed</h1>
+    </div>
+  </div>
+
+  <ion-card>
+    <ion-card-content class="expand-in" *ngIf="cameraStatus">
+      <div class="video-container">
+        <iframe src="http://192.168.68.224:5000" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="bottomtext">
+    <ion-button href="../../add-tenant" shape="round" color="success">Add Tenant<ion-icon slot="end" name="add-circle-outline"></ion-icon></ion-button>
+    <ion-button href="../../delete-tenant" shape="round" color="danger">Delete Tenant<ion-icon slot="end" name="remove-circle-outline"></ion-icon></ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,115 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button href="/tabs"> Back </ion-button>
+    </ion-buttons>
+    <ion-title>Registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="center">
+    <h1>Register Now</h1>
+  </div>
+
+  <div class="input-container" *ngIf="currentScreen === 1">
+    <ion-input
+      label="First Name"
+      label-placement="floating"
+      fill="outline"
+      placeholder="Enter text"
+      [(ngModel)]="fname"
+      required
+    ></ion-input>
+
+    <ion-input
+      label="Last Name"
+      label-placement="floating"
+      fill="outline"
+      placeholder="Enter text"
+      [(ngModel)]="lname"
+      required
+    ></ion-input>
+
+    <ion-input
+      label="Username"
+      label-placement="floating"
+      fill="outline"
+      placeholder="Enter text"
+      [(ngModel)]="username"
+      required
+    ></ion-input>
+  </div>
+
+  <div class="input-container" *ngIf="currentScreen === 2">
+    <ion-input
+      label="House No./Street/Bldg. (Optional)"
+      label-placement="floating"
+      fill="outline"
+      placeholder="Enter text"
+    ></ion-input>
+
+    <ion-input
+      label="Municipality (Optional)"
+      label-placement="floating"
+      fill="outline"
+      placeholder="Enter text"
+    ></ion-input>
+
+    <ion-input
+      label="Country"
+      label-placement="floating"
+      fill="outline"
+      placeholder="Enter text"
+      [(ngModel)]="country"
+      required
+    ></ion-input>
+  </div>
+
+  <div class="input-container" *ngIf="currentScreen === 3">
+    <ion-input
+      label="Email"
+      label-placement="floating"
+      fill="outline"
+      placeholder="Enter text"
+      [(ngModel)]="email"
+      required
+    ></ion-input>
+
+    <ion-input
+      label="Password"
+      label-placement="floating"
+      fill="outline"
+      placeholder="Enter text"
+      type="password"
+      [(ngModel)]="password"
+      required
+    ></ion-input>
+  </div>
+
+  <div class="navigation-buttons">
+
+    <ion-button 
+      shape="round" 
+      color="success" 
+      (click)="previousScreen()" 
+      [disabled]="currentScreen === 1"
+      >Previous</ion-button>
+
+    <ion-button 
+      shape="round" 
+      color="success" 
+      *ngIf="currentScreen < 3" 
+      (click)="nextScreen()" 
+      [disabled]="!isFormValid()"
+      >Next</ion-button>
+
+    <ion-button 
+      shape="round" 
+      color="success" 
+      *ngIf="currentScreen === 3" 
+      (click)="submitForm()" 
+      [disabled]="!isFormValid()"
+      >Submit</ion-button>
+  </div>
+</ion-content>

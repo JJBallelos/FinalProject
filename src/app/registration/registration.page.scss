@@ -1,0 +1,30 @@
+ion-input {
+  --padding-start: 10px; /* Adjust the padding as needed */
+  --padding-end: 10px; /* Adjust the padding as needed */
+}
+
+.input-container {
+  padding: 20px; /* Adjust the padding as needed */
+}
+
+.input-container ion-input {
+  margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+.input-container:last-child ion-input {
+  margin-bottom: 0; /* Remove margin-bottom for the last input */
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0 10%;
+}

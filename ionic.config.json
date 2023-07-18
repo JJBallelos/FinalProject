@@ -1,0 +1,7 @@
+{
+  "name": "Safety Scan",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

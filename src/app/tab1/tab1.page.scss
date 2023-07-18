@@ -1,0 +1,84 @@
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.bottomtext {
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 5%;
+  flex-wrap: wrap;
+}
+
+.ion-card {
+  margin: 1rem;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.status ion-label {
+  flex: 1;
+}
+
+.status-toggle {
+  margin-left: auto;
+  --background: var(--ion-color-danger);
+  --background-checked: var(--ion-color-success);
+  --handle-background: var(--ion-color-danger);
+  --handle-background-checked: var(--ion-color-success);
+  --handle-background-focused: var(--ion-color-success);
+}
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 40%; /* Adjust the percentage to control the size of the video container */
+  overflow: hidden; /* Hide any overflowing content */
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+ion-button {
+  margin: 0.5rem;
+  flex: 1 0 40%; /* Adjust the flex value as needed to control button width */
+}
+
+@media (max-width: 600px) {
+  .bottomtext {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .video-container {
+    padding-bottom: 75%; /* Adjust the aspect ratio for smaller screens */
+  }
+}
+.card-content {
+  overflow: hidden; /* Hide the scrollbar */
+}
+
+@keyframes expandIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.expand-in {
+  animation: expandIn 0.2s ease-out;
+}

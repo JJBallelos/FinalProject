@@ -1,0 +1,11 @@
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .avatar-container ion-avatar {
+    width: 125px;
+    height: 125px;
+  }

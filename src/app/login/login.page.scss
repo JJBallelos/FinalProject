@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+.custom-card {
+  width: 80%;
+  max-width: 350px; /* Adjust the maximum width as needed */
+  margin: auto;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.simple-button {
+  width: fit-content;
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+.register-link {
+  text-align: center;
+  color: blue;
+}

@@ -1,0 +1,32 @@
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10%;
+}
+
+ion-input {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
+
+.image {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+}
+
+.bottomtext {
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  padding-bottom: 5%;
+}
