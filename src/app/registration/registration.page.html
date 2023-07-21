@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button href="/tabs"> Back </ion-button>
+      <ion-button href="/login"> Back </ion-button>
     </ion-buttons>
     <ion-title>Registration</ion-title>
   </ion-toolbar>
@@ -110,6 +110,6 @@
       *ngIf="currentScreen === 3" 
       (click)="submitForm()" 
       [disabled]="!isFormValid()"
-      >Submit</ion-button>
+      ><a href="/login" class="custom-link">Submit</a></ion-button>
   </div>
 </ion-content>

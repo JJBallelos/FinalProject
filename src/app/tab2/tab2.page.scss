@@ -1,0 +1,35 @@
+ion-content {
+    --ion-background-color: #121212; /* Set the background color of the content */
+  }
+  
+  ion-thumbnail {
+    --border-radius: 8px; /* Rounded corners for the thumbnail */
+    --padding-start: 8px; /* Add padding to the left of the thumbnail */
+  }
+  
+  ion-item {
+    border-bottom: 1px solid #121212; /* Add a separator between items */
+    padding: 16px; /* Add padding around the items */
+  }
+  
+  ion-label {
+    display: block; /* Make the label a block element to occupy full width */
+    margin-left: 16px; /* Add some margin between the thumbnail and label */
+  }
+  
+  h2 {
+    font-size: 20px; /* Set the font size for the snapshot label */
+    font-weight: bold; /* Make the label bold */
+    color: #ffffff; /* Set the text color for the snapshot label */
+    margin-bottom: 4px; /* Add some margin below the label */
+  }
+  
+  .timestamp {
+    font-size: 14px; /* Set the font size for the timestamp */
+    color: #999; /* Set the text color for the timestamp */
+  }
+  
+  /* Add hover effect when hovering over the items */
+  ion-item:hover {
+    background-color: #2e2e2e; /* Change background color on hover */
+  }

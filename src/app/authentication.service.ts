@@ -19,7 +19,7 @@ export class AuthenticationService {
     this.angularFireAuth
       .signInWithEmailAndPassword(email, password)
       .then(res => {
-        this.router.navigate(['./tabs']);
+        this.router.navigate(['tabs']);
         console.log("You're in!");
       })
       .catch(err => {

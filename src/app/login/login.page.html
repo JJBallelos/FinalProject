@@ -8,8 +8,8 @@
   <div class="container">
     <ion-card class="custom-card">
       <div class="logo-container">
-      <img src="assets/logo.png" alt="Logo">
-    </div>
+        <img src="assets/logo.png" alt="Logo">
+      </div>
       <ion-card-content class="custom-card-content">
         <ion-item>
           <ion-label position="floating">Email</ion-label>
@@ -19,6 +19,7 @@
           <ion-label position="floating">Password</ion-label>
           <ion-input [(ngModel)]="password" type="password" placeholder="Password"></ion-input>
         </ion-item>
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
         <br/>
         <ion-button class="simple-button" (click)="signIn()">Login</ion-button>
       </ion-card-content>

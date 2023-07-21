@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
+import { Tab1Page } from './tab1/tab1.page';
 
 const routes: Routes = [
   
  {
-    path: '',
+    path: 'tabs',
     canActivate: [AuthGuard], // Check if user is logged in
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
-    path: 'login',
+    path: 'tab1',
+    component: Tab1Page
+  },
+  {
+    path: '',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {

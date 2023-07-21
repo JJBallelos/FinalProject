@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import firebase from 'firebase/compat/app';
-
-import { Router } from '@angular/router';
-
 import { AuthenticationService } from '../authentication.service';
-import { NavController, LoadingController } from '@ionic/angular';
-
+import { LoadingController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -16,22 +11,27 @@ import { NavController, LoadingController } from '@ionic/angular';
 export class LoginPage {
   email: string = '';
   password: string = '';
+  errorMessage: string = '';
 
   constructor(
-    private authenticationService:AuthenticationService,
-    private loadingCtrl: LoadingController
-
-
+    private authenticationService: AuthenticationService,
+    private loadingCtrl: LoadingController,
+    private toastCtrl: ToastController
   ) {}
 
-  
   async signIn() {
-    this.presentLoading();
-    const result = await this.authenticationService.SignIn(this.email, this.password);
-    this.email = '';
-    this.password = '';
-    console.log("result")
+   
+    try {
+      const result = await this.authenticationService.SignIn(this.email, this.password);
+      this.email = '';
+      this.password = '';
+      console.log("result");
+    } catch (error) {
+      this.errorMessage = 'An error occurred while signing in. Please check your email and password.';
+      await this.dismissLoading(); // Close the loading screen
+      this.presentErrorToast(this.errorMessage);
     }
+  }
 
   async presentLoading() {
     const loading = await this.loadingCtrl.create({
@@ -45,4 +45,13 @@ export class LoginPage {
   async dismissLoading() {
     await this.loadingCtrl.dismiss();
   }
-} 
+
+  async presentErrorToast(errorMessage: string) {
+    const toast = await this.toastCtrl.create({
+      message: errorMessage,
+      color: 'danger'
+    });
+
+    await toast.present();
+  }
+}

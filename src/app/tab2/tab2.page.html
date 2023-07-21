@@ -5,7 +5,16 @@
 </ion-header>
 
 
-<ion-content [fullscreen]="true">
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let snapshot of snapshots">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="getImageUrlFromBase64(snapshot.image_data)" alt="Photo"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ snapshot.label }}</h2>
+        <p class="timestamp">Timestamp: {{ snapshot.timestamp }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
